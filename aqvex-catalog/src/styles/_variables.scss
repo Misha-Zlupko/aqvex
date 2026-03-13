@@ -1,0 +1,50 @@
+@use './colors' as *;
+
+// ============================================
+// TYPOGRAPHY
+// ============================================
+
+$font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-size-md: 16px;
+$font-size-sm: 14px;
+
+// ============================================
+// SPACING
+// ============================================
+
+$spacing-sm: 8px;
+$spacing-md: 16px;
+
+// ============================================
+// TRANSITIONS
+// ============================================
+
+$transition-base: all 0.3s ease;
+$transition-fast: all 0.15s ease;
+$transition-slow: all 0.5s ease;
+$transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+$transition-opacity: opacity 0.3s ease;
+$transition-transform: transform 0.3s ease;
+$transition-colors: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+$transition-shadow: box-shadow 0.3s ease;
+
+// ============================================
+// SHADOWS
+// ============================================
+
+$shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.03);
+$shadow-md: 0 2px 4px rgba(0, 0, 0, 0.04);
+$shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.05);
+$shadow-xl: 0 6px 12px rgba(0, 0, 0, 0.06);
+$shadow-hover: 0 4px 8px rgba($color-active, 0.08);
+$shadow-button: 0 2px 4px rgba($color-active, 0.12);
+$shadow-active: 0 0 0 2px rgba($color-active, 0.2);
+$shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.02);
+$text-shadow-sm: 0 1px 1px rgba(0, 0, 0, 0.02);
+
+// ============================================
+// BORDERS
+// ============================================
+
+$border-color: $color-border;
+$border-radius-md: 8px;

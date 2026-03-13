@@ -1,0 +1,67 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+@use '@styles/colors' as *;
+
+.header {
+    background: $color-white;
+    padding: $spacing-md 0;
+    box-shadow: $shadow-sm;
+
+    &__container {
+        @include container;
+        @include flex-between;
+    }
+
+    &__logo {
+        @include flex-center;
+        
+        img {
+            height: 40px;
+            width: auto;
+            transition: $transition-base;
+            
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    &__basket {
+        @include flex-center;
+        gap: $spacing-sm;
+        color: $color-text-primary;
+        border-radius: $border-radius-md;
+        padding: $spacing-sm $spacing-md;
+        text-decoration: none;
+        font-size: $font-size-md;
+        font-weight: 500;
+        transition: $transition-base;
+        
+        &:hover {
+            color: $color-white;
+            background: $color-active;
+            transform: translateY(-2px);
+            box-shadow: $shadow-button;
+            
+            svg {
+                fill: $color-white;
+            }
+            
+            .header__basketCount {
+                color: $color-white;
+            }
+        }
+        
+        svg {
+            transition: $transition-base;
+            fill: $color-text-primary;
+        }
+    }
+    
+    &__basketCount {
+        font-size: 18px;
+        font-weight: 600;
+        color: $color-text-primary;
+        transition: $transition-base;
+    }
+}
