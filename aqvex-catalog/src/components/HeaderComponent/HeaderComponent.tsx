@@ -16,6 +16,7 @@ export const HeaderComponent = () => {
         <Link to="/basket" className={styles.header__basket}>
           <PiBasketBold size={32} />
           <span className={styles.header__basketCount}>0</span>
+            
         </Link>
       </div>
     </header>
