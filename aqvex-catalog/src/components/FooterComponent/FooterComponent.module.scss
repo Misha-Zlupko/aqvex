@@ -1,0 +1,45 @@
+.container {
+    @include container;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 60px;
+    // стилі будуть тут
+  
+    &__left {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        // стилі будуть тут
+    }
+  
+    &__logo {
+        // стилі будуть тут
+    }
+  
+    &__made {
+        // стилі будуть тут
+    }
+  
+    &__copyright {
+        font-size: 14px;
+        color: $color-text-light;
+        // стилі будуть тут
+    }
+  
+    &__right {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        // стилі будуть тут
+    }
+  
+    &__paymentIcon {
+        // стилі будуть тут
+    }
+}

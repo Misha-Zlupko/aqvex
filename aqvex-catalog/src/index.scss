@@ -1,3 +1,4 @@
+@use './styles/colors' as *;
 @use './styles/variables' as *;
 @use './styles/mixins' as *;
 
@@ -5,8 +6,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  max-width: 100%;  // додай це
+}
+
+html, body {
+  overflow-x: hidden;  // додай це - забороняє горизонтальний скрол
+  width: 100%;
+  position: relative;
 }
 
 body {
-  font-family: sans-serif;
+  font-family: $font-family-base;
 }

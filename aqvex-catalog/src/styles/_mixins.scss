@@ -2,6 +2,9 @@
 // FLEXBOX MIXINS (ЗАЛИШАЄМО)
 // ============================================
 
+@use './colors' as *;
+@use './variables' as *;
+
 @mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
     display: flex;
     flex-direction: $direction;
@@ -81,10 +84,8 @@
 
 @mixin product-card {
     background: $color-white;
-    border: 1px solid $color-border;
-    border-radius: 12px;
-    padding: 16px;
     transition: $transition-base;
+    border-radius: 16px;
     
     &:hover {
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
@@ -98,24 +99,30 @@
 
 @mixin product-grid {
     display: grid;
-    gap: 24px;
+    gap: 16px;
     
-    // ТЕЛЕФОН: 1 колонка
-    @include mobile {
+    // ДУЖЕ МАЛЕНЬКИЙ ТЕЛЕФОН (до 399px) - 1 колонка
+    @media (max-width: 399px) {
         grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    // ЗВИЧАЙНИЙ ТЕЛЕФОН (400px - 767px) - 2 колонки
+    @media (min-width: 400px) and (max-width: 767px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    // ПЛАНШЕТ (768px - 1023px) - 3 колонки
+    @media (min-width: 768px) and (max-width: 1023px) {
+        grid-template-columns: repeat(3, 1fr);
         gap: 16px;
     }
     
-    // ПЛАНШЕТ: 2 колонки
-    @include tablet {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-    
-    // КОМП'ЮТЕР: 4 колонки (ЯК В МАКЕТІ)
-    @include desktop {
+    // КОМП'ЮТЕР (1024px - 1399px) - 4 колонки
+    @media (min-width: 1024px){
         grid-template-columns: repeat(4, 1fr);
-        gap: 24px;
+        gap: 20px;
     }
 }
 
@@ -125,18 +132,16 @@
 
 @mixin product-card-button {
     width: 100%;
-    padding: 8px 16px;
     border: none;
-    border-radius: 8px;
+    border-radius: 15px;
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
     transition: $transition-base;
-    background: $color-primary;
+    background: $color-cart-bg;
     color: $color-white;
     
     &:hover {
-        background: darken($color-primary, 10%);
     }
     
     &:active {
@@ -175,19 +180,19 @@
     transition: $transition-base;
     
     &::placeholder {
-        color: $text-light;
+        color: $color-text-light;
     }
     
     &:focus {
         outline: none;
-        border-color: $primary-color;
-        box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
+        border-color: $color-active;
+        box-shadow: 0 0 0 3px rgba($color-active, 0.1);
     }
 }
 
 @mixin search-input {
     @include input-base;
-    padding-right: $spacing-xl;
+    padding-right: 40px;
 }
 
 @mixin select-base {

@@ -4,12 +4,13 @@
 
 .header {
     background: $color-white;
-    padding: $spacing-md 0;
     box-shadow: $shadow-sm;
 
     &__container {
         @include container;
         @include flex-between;
+
+        padding: 31px;
     }
 
 

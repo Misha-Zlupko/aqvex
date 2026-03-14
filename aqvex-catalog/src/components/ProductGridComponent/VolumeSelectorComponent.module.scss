@@ -1,0 +1,103 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+@use '@styles/colors' as *;
+
+.volume {
+  position: relative;
+  width: fit-content;
+
+  &__trigger {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 16px 20px;  // стандартні падінги
+    background: $color-white;
+    border: 1px solid $color-border;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    color: $color-text-primary;
+    cursor: pointer;
+    transition: $transition-base;
+
+    // Планшет (768px - 1023px)
+    @include tablet {
+        padding: 14px 18px;
+        font-size: 16px;
+    }
+
+    // Телефон (до 767px)
+    @include mobile {
+        padding: 12px 16px;
+        font-size: 14px;
+        gap: 3px;
+    }
+
+    // Дуже маленький телефон (до 400px)
+    @media (max-width: 400px) {
+        padding: 10px 14px;
+        font-size: 13px;
+    }
+
+    &:hover {
+        border-color: $color-active;
+    }
+}
+
+  &__label {
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  &__icon {
+    min-width: 10px;
+    min-height: 10px;
+    color: $color-text-secondary;
+    transition: transform 0.2s ease;
+
+    &Rotated {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    margin-bottom: 4px;
+    background: $color-white;
+    border: 1px solid $color-border;
+    border-radius: 8px;
+    box-shadow: $shadow-md;
+    min-width: 100px;
+    z-index: 10;
+    overflow: hidden;
+  }
+
+  &__option {
+    width: 100%;
+    padding: 8px 12px;
+    text-align: left;
+    background: none;
+    border: none;
+    font-size: 14px;
+    color: $color-text-primary;
+    cursor: pointer;
+    transition: $transition-base;
+
+    &:hover:not(:disabled) {
+      background: $color-background;
+      color: $color-active;
+    }
+
+    &Disabled {
+      color: $color-text-light;
+      cursor: not-allowed;
+      opacity: 0.5;
+
+      &:hover {
+        background: none;
+      }
+    }
+  }
+}

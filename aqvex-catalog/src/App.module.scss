@@ -1,0 +1,12 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; // весь екран по висоті
+  }
+  
+  .main {
+    flex: 1; // розтягується на все вільне місце
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }

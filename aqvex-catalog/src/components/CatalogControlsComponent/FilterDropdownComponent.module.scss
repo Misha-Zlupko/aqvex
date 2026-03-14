@@ -1,0 +1,87 @@
+.filter {
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+    &__info {
+        display: flex;
+        align-items: center;
+    }
+    
+    &__count {
+        font-size: 16px;
+        color: $color-text-primary;
+        font-weight: 500;
+        letter-spacing: -2%;
+        opacity: 50%;    
+    }
+    
+    &__trigger {
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+    
+    &__icon {
+        margin-right: 10px;
+        // пусто
+    }
+    
+    &__button {
+        background-color: white;
+        border: none;
+        font-size: 16px;
+    
+        @include flex-center;
+        gap: 18px;
+        font-size: 16px;
+        letter-spacing: -2%;
+
+    }
+
+    &__dropdown {
+        position: absolute;
+        margin-top: 8px;
+        right: 0;
+        top: 16px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        padding: 8px 0;
+        min-width: 180px;
+        z-index: 10;
+        opacity: 30px;  
+    }
+
+    &__option {
+        padding: 8px 16px;
+        font-size: 14px;
+        color: $color-text-primary;
+        cursor: pointer;
+        white-space: nowrap;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.03);
+        }
+    }
+
+    &__trigger {
+        @include flex-center;
+        gap: 8px;
+        position: relative;
+    }
+
+    &__orderButton {
+        background-color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__iconDown {
+        transition: transform 0.15s ease-out;
+    }
+}

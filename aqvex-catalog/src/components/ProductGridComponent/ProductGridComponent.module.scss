@@ -1,0 +1,40 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+@use '@styles/colors' as *;
+
+.container {
+    @include container;
+    width: 100%;
+    overflow-x: hidden;  // прибирає горизонтальний скрол
+}
+
+.grid {
+    @include product-grid;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+    width: 100%;
+
+    &__item {
+        height: 100%;
+        width: 100%;
+        min-width: 0;  // важливо для запобігання виходу за межі
+    }
+}
+
+.skeleton {
+    @include product-card;
+    @include flex-center;
+    height: 100%;
+    min-height: 280px;
+    color: $color-text-secondary;
+    font-size: 14px;
+}
+
+.empty {
+    @include flex-center;
+    min-height: 200px;
+    font-size: 16px;
+    color: $color-text-secondary;
+    text-align: center;
+}

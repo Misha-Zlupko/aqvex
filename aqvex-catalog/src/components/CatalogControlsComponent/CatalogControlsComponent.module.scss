@@ -1,0 +1,13 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+@use '@styles/colors' as *;
+
+.container {
+    @include container;
+}
+
+.catalog {
+    @include flex-column;
+    align-items: end;
+    margin-left: auto;
+}

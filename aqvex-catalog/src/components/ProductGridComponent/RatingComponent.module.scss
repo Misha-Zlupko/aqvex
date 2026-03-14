@@ -1,0 +1,43 @@
+@use '@styles/colors' as *;
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 32px;
+  
+  &__stars {
+    display: flex;
+    gap: 2px;
+  }
+  
+  &__starFilled {
+    color: #43A0FD;
+    font-size: 16px;    
+    width: 11px;
+    height: 11px;
+}
+  
+  &__starHalf {
+    color: #43A0FD;
+    font-size: 16px;
+  }
+  
+  &__starEmpty {
+    width: 11px;
+    height: 11px;
+    color: #E5E5E5;
+    font-size: 16px;
+  }
+  &__count {
+    font-size: 14px;
+    font-weight: 400;
+    color: $color-text-secondary;
+    letter-spacing: -2%;
+    vertical-align: middle;
+    text-decoration: underline;
+    text-decoration-color: $color-border;  // якщо в тебе є $color-border (#E5E5E5)
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+}
+}

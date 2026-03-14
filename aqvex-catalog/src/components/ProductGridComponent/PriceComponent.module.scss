@@ -1,0 +1,60 @@
+@use '@styles/variables' as *;
+@use '@styles/colors' as *;
+
+.price {
+  margin-bottom: 8px;
+  
+  &__row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  &__old {
+    color: $color-text-light;
+    font-size: 22px;
+    font-weight: 500;
+    text-decoration: line-through;
+    text-decoration-color: $color-discount;
+    text-decoration-thickness: 2px;
+  }
+
+  &__current {
+    background: linear-gradient(90deg, #003181 0%, #2288ED 100%);
+    background-clip: text;
+    color: transparent;
+    font-size: 22px;
+    font-weight: 500;
+  }
+  
+  &__discountWrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;  
+    height: 18px; 
+  }
+  
+  &__discount {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  &__discountValue {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    z-index: 1;
+  }
+}

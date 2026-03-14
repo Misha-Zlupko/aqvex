@@ -1,0 +1,104 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+@use '@styles/colors' as *;
+
+.basket {
+  @include container;
+  margin-top: 32px;
+  margin-bottom: 48px;
+
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 32px;
+
+  @include tablet {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  @include mobile {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  &__main {
+    min-width: 0;
+  }
+
+  &__sidebar {
+    min-width: 0;
+  }
+}
+
+.checkout {
+  padding: 24px;
+  border-radius: 16px;
+  background: $color-white;
+  box-shadow: $shadow-md;
+
+  &__title {
+    font-size: 18px;
+    font-weight: 600;
+    color: $color-text-primary;
+    margin-bottom: 16px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__label {
+    font-size: 13px;
+    color: $color-text-secondary;
+  }
+
+  &__input {
+    @include input-base;
+    font-size: 14px;
+  }
+
+  &__error {
+    font-size: 12px;
+    color: $color-danger;
+  }
+
+  &__button {
+    margin-top: 8px;
+    width: 100%;
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: none;
+    background: $color-active;
+    color: $color-white;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: $transition-base;
+
+    &:hover {
+      background: darken($color-active, 6%);
+      box-shadow: $shadow-button;
+      transform: translateY(-1px);
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: default;
+      box-shadow: none;
+      transform: none;
+    }
+  }
+
+  &__success {
+    margin-top: 12px;
+    font-size: 13px;
+    color: $color-success;
+  }
+}
+

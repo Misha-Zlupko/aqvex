@@ -1,0 +1,45 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+@use '@styles/colors' as *;
+
+.pagination {
+  @include flex-center;
+  gap: 12px;
+  margin-top: 31px;
+  color: $color-text-primary;
+
+  &__button {
+    width: 46px;
+    height: 46px;
+    padding: 0 10px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    background: transparent;
+    cursor: pointer;
+    color: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: $transition-base;
+
+    &--active {
+      border-color: $color-active;
+    }
+
+    &--disabled {
+      opacity: 0.4;
+      cursor: default;
+      &:hover {
+        border-color: transparent;
+      }
+    }
+  }
+
+  &__dots {
+    padding: 0 4px;
+    color: $color-text-secondary;
+  }
+}
+

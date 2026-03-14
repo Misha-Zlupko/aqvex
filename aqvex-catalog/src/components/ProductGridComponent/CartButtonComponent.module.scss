@@ -1,0 +1,116 @@
+@use '@styles/variables' as *;
+@use '@styles/mixins' as *;
+@use '@styles/colors' as *;
+
+.cart {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: 43px;
+    width: 100%;
+
+    @include tablet {
+        margin-right: 12px;
+    }
+    
+    // Телефон (до 767px)
+    @include mobile {
+        margin-right: 12px;
+    }
+
+    &__button {
+        @include product-card-cart-button;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        transition: $transition-base;
+        color: $color-text-primary;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        
+        // Планшет (768px - 1023px)
+        @include tablet {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            gap: 10px;
+        }
+        
+        // Телефон (до 767px)
+        @include mobile {
+            padding-top: 8px;
+            padding-bottom: 8px;
+            gap: 8px;
+        }
+        
+        // Дуже маленький телефон (до 400px)
+        @media (max-width: 400px) {
+            padding-top: 6px;
+            padding-bottom: 6px;
+            gap: 6px;
+        }
+        
+        &Disabled {
+            background: #CCCCCC;
+            cursor: not-allowed;
+            opacity: 0.7;
+            color: $color-text-primary;
+            
+            &:hover {
+                background: #CCCCCC;
+                transform: none;
+                box-shadow: none;
+            }
+        }
+    }
+
+    &__icon {
+        width: 26px;
+        height: 26px;
+        filter: brightness(0);
+        
+        // Планшет
+        @include tablet {
+            width: 24px;
+            height: 24px;
+        }
+        
+        // Телефон
+        @include mobile {
+            width: 22px;
+            height: 22px;
+        }
+        
+        // Дуже маленький телефон
+        @media (max-width: 400px) {
+            width: 20px;
+            height: 20px;
+        }
+        
+        &Disabled {
+            filter: grayscale(1) brightness(0.5);
+        }
+    }
+
+    &__text {
+        font-weight: 500;
+        font-size: 18px;
+        color: $color-text-primary;
+        
+        // Планшет
+        @include tablet {
+            font-size: 16px;
+        }
+        
+        // Телефон
+        @include mobile {
+            font-size: 14px;
+        }
+        
+        // Дуже маленький телефон
+        @media (max-width: 400px) {
+            font-size: 12px;
+        }
+    }
+}
